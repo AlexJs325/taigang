@@ -1,0 +1,143 @@
+
+==============================
+·þÎñÆ÷¶Ë½ÓÊÕ£¨GET£©ºÍ·µ»Ø£¨Return£©Êý¾Ý£¨Json¸ñÊ½£©s
+Get and Return data(json)
+
+
+tg_add_friends{
+	GET:
+		follow_id,
+		follower_id;
+	Return:
+		success,
+		message;
+}
+
+tg_add_tag{
+	GET:tag_id,
+		tag_name,
+		video_id
+	Return:
+		success,
+		message;
+}		
+}
+
+tg_add_video{
+	GET:
+		video_name,
+		user_id,
+		video_path,
+		status,
+		video_type,
+		video_cover,
+		update_time,
+		video_theme;
+	Return:	
+		success,
+		message;
+
+}
+
+tg_clickzan{
+	GET:
+		video_id,
+		user_id;
+	Return:
+		success,
+		clickzan(视频被赞的次数),
+		message;
+}
+
+tg_delete_follower{
+	GET:
+		follow_id,
+		follower_id;
+	Return:
+		success,
+		message;
+}
+
+tg_find_video_by_id{
+	GET:
+		video_id,
+	Return:
+		success,
+		videos:
+			videos => list of video(video_id,user_id,video_path,status,video_type,update_time,video_cover,nickname,theme_name),
+		message;
+}
+
+tg_find_video_by_theme{
+	GET:
+		theme_name
+	Return:
+		success,
+		videos:
+			videos => list of video(video_id,user_id,video_path,status,video_type,update_time,video_cover,nickname,theme_name),
+		message;
+}
+
+tg_get_followerlist{
+	GET:
+		username,
+	Return:
+		success,
+		follower_id:
+			follower_id => list of follow_id,
+		message;
+}
+
+tg_get_followlist{
+	GET:
+		username,
+	Return:
+		success,
+		follow_id:
+			follow_id => list of follow_id,
+		message;
+}
+
+tg_get_user_info{
+	GET:
+		username
+	Return:
+		success,
+		nickname,
+		email,
+		gender,
+		reg_time,
+		portrait;
+}
+
+tg_get_user_sent{
+	GET:
+		username
+	Return:
+		success,
+		sent_video:
+			list of video(video_name,video_intro,video_path,update_time,video_cover,video_theme),
+		message;
+}
+
+tg_login{
+	GET:
+		username,
+		password,
+	Return:
+		success,
+		message;
+}
+
+tg_register{
+	GET:username,
+		password,
+		gender,
+		nickname,
+		email,
+	Return:
+		success,
+		message;
+}
+
+=============================
